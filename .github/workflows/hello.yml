@@ -2,8 +2,10 @@ name: Hello CI
 on:
   push:
     branches: [ main ]
+    paths-ignore:
+      - '**.md'
   pull_request:
-    branches: [ main ]  
+    branches: [ main ] 
 jobs:
   say-hello:
     runs-on: ubuntu-latest
