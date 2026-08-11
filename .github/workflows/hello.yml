@@ -5,12 +5,14 @@ on:
     paths-ignore:
       - '**.md'
   pull_request:
-    branches: [ main ] 
+    branches: [ main ]
 jobs:
   say-hello:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout le code
+        uses: actions/checkout@v4
       - name: Dire bonjour
         run: echo "Hello CI depuis le runner"
       - name: Inspecter le dossier
-        run: ls -la  
+        run: ls -la
