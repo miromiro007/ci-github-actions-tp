@@ -8,6 +8,9 @@ on:
     branches: [ main ]
 jobs:
   build-and-test:
+    strategy:
+      matrix:
+        node: [ 18, 20, 22 ]
     runs-on: ubuntu-latest
     steps:
       - name: Checkout le code
@@ -15,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node }}
       - name: Installer les dependances
         run: npm ci
       - name: Lancer les tests
