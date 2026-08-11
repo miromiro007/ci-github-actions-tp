@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ main ]
 jobs:
-  say-hello:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout le code
@@ -16,9 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Verifier la version de Node
-        run: node -v    
-      - name: Dire bonjour
-        run: echo "Hello CI depuis le runner"
-      - name: Inspecter le dossier
-        run: ls -la
+      - name: Installer les dependances
+        run: npm ci
+      - name: Lancer les tests
+        run: npm test
