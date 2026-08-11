@@ -12,6 +12,12 @@ jobs:
     steps:
       - name: Checkout le code
         uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Verifier la version de Node
+        run: node -v    
       - name: Dire bonjour
         run: echo "Hello CI depuis le runner"
       - name: Inspecter le dossier
