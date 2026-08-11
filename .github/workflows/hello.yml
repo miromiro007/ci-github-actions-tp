@@ -21,7 +21,7 @@ jobs:
       - name: Afficher le nom du projet
         run: echo "Le nom du projet est $PROJECT_NAME"
       - name: Utiliser le secret
-        run: echo "Le token vaut : $TOKEN"
+        run: echo "Le token vaut - $TOKEN"
         env:
           TOKEN: ${{ secrets.DEMO_TOKEN }}
       - name: Setup Node.js
