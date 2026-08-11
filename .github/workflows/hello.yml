@@ -19,7 +19,11 @@ jobs:
       - name: Checkout le code
         uses: actions/checkout@v4
       - name: Afficher le nom du projet
-        run: echo "Le nom du projet est $PROJECT_NAME"  
+        run: echo "Le nom du projet est $PROJECT_NAME"
+      - name: Utiliser le secret
+        run: echo "Le token vaut : $TOKEN"
+        env:
+          TOKEN: ${{ secrets.DEMO_TOKEN }}
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
