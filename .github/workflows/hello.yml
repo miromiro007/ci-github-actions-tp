@@ -1,4 +1,6 @@
 name: Hello CI
+env:
+  PROJECT_NAME: ci-github-actions-tp
 on:
   push:
     branches: [ main ]
@@ -16,6 +18,8 @@ jobs:
     steps:
       - name: Checkout le code
         uses: actions/checkout@v4
+      - name: Afficher le nom du projet
+        run: echo "Le nom du projet est $PROJECT_NAME"  
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
