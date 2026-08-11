@@ -33,4 +33,4 @@ jobs:
       - name: Installer les dependances
         run: npm ci
       - name: Verifier le code avec ESLint
-        run: npx eslint src/ --no-eslintrc --env node,es2021 --parser-options=ecmaVersion:2021
+        run: npx eslint src/
