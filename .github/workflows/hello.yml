@@ -12,3 +12,5 @@ jobs:
     steps:
       - name: Dire bonjour
         run: echo "Hello CI depuis le runner"
+      - name: Inspecter le dossier
+        run: ls -la  
