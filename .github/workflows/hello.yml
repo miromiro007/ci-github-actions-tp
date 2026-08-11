@@ -26,5 +26,11 @@ jobs:
     steps:
       - name: Checkout le code
         uses: actions/checkout@v4
-      - name: Message
-        run: echo "Job lint independant"
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Installer les dependances
+        run: npm ci
+      - name: Verifier le code avec ESLint
+        run: npx eslint src/ --no-eslintrc --env node,es2021 --parser-options=ecmaVersion:2021
