@@ -1,0 +1,10 @@
+name: Appel du lint reutilisable
+
+on:
+  workflow_dispatch:
+
+jobs:
+  appel:
+    uses: ./.github/workflows/reusable-lint.yml
+    with:
+      node-version: '20'

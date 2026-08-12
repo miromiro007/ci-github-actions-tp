@@ -1,0 +1,23 @@
+name: Reusable Lint
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        required: true
+        type: string
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout le code
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+      - name: Installer les dependances
+        run: npm ci
+      - name: Verifier le code avec ESLint
+        run: npx eslint src/
