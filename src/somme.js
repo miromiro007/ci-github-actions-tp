@@ -1,5 +1,5 @@
 function somme(a, b) {
-  return a + b;   // corrige : addition, pas soustraction
+  return a - b;
 }
 
 module.exports = somme;
