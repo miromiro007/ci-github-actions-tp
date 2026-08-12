@@ -21,6 +21,12 @@ jobs:
     steps:
       - name: Checkout le code
         uses: actions/checkout@v4
+      - name: Inspecter le runner
+        run: |
+          echo "OS : ${{ runner.os }}"
+          echo "Arch : ${{ runner.arch }}"
+          nproc || echo "nproc non disponible sur cet OS"
+          free -h || echo "free non disponible sur cet OS"  
       - name: Afficher le nom du projet
         run: echo "Le nom du projet est $PROJECT_NAME"
       - name: Utiliser le secret
